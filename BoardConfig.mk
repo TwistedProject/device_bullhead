@@ -32,7 +32,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Inline kernel building
 TARGET_GCC_VERSION_ARM64 := 5.3-kernel
-TARGET_KERNEL_SOURCE := kerne/lge/bullhead
+TARGET_KERNEL_SOURCE := kernel/lge/bullhead
 TARGET_KERNEL_CONFIG := phasma_defconfig
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb 
 
