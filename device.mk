@@ -394,7 +394,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     power.bullhead
 
-# Modem debugger/misc
+# old-apns.conf
+PRODUCT_COPY_FILES += \
+    device/lge/bullhead/old-apns-conf.xml:system/etc/old-apns-conf.xml
+
+# Modem debugger
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     QXDMLogger
