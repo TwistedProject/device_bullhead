@@ -20,6 +20,15 @@
 # Everything in this directory will become public
 
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/lge/bullhead/franco/zImage
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES := \
+    $(LOCAL_KERNEL):kernel
+
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/init.bullhead.rc:root/init.bullhead.rc \
     device/lge/bullhead/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
@@ -27,7 +36,11 @@ PRODUCT_COPY_FILES += \
     device/lge/bullhead/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
     device/lge/bullhead/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc \
     device/lge/bullhead/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
-    device/lge/bullhead/init.bullhead.fp.rc:root/init.bullhead.fp.rc
+    device/lge/bullhead/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
+    device/lge/bullhead/init.fk.rc:root/bin/init.fk.rc \
+    device/lge/bullhead/init.performance_profiles.rc:root/init.performance_profiles.rc \
+    device/lge/bullhead/init.special_power.sh:root/init.special_power.sh \
+    device/lge/bullhead/init.supolicy.sh:root/init.supolicy.sh
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \

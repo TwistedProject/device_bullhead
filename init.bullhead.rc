@@ -20,6 +20,8 @@ import init.bullhead.fp.rc
 import init.bullhead.sensorhub.rc
 import init.bullhead.ramdump.rc
 import init.bullhead.misc.rc
+import init.fk.rc
+import init.performance_profiles.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
